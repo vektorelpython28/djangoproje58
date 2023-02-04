@@ -2,10 +2,13 @@ from django.db import models
 from django.utils import timezone
 
 class BlogModel(models.Model):
-    baslik = models.CharField(max_length=200)
-    yazi = models.TextField()
-    kayitzaman = models.DateTimeField(default=timezone.now)
-    yayimzaman = models.DateTimeField(null=True,blank=True)
+    class Meta:
+        verbose_name = 'Gönderi'
+        verbose_name_plural = 'Gönderiler'
+    baslik = models.CharField(verbose_name="Başlık",max_length=200)
+    yazi = models.TextField(verbose_name="Yazı Gövdesi")
+    kayitzaman = models.DateTimeField(verbose_name="Kayıt Zaman",default=timezone.now)
+    yayimzaman = models.DateTimeField(verbose_name="Yayımlanma Zamanı",null=True,blank=True)
 
     def yayimla(self):
         self.yayimzaman = timezone.now()

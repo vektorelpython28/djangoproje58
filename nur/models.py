@@ -6,6 +6,9 @@ from django.utils import timezone
 
 # Create your models here.
 class ToDoList(models.Model):
+    class Meta:
+        verbose_name = 'Yapılacak'
+        verbose_name_plural = 'Yapılacaklar'
     baslik = models.CharField(max_length=144,verbose_name="Başlık")
     aciklama = models.TextField(blank=True,null=True,verbose_name="Açıklama")
     eklenme_tarihi = models.DateTimeField(default=timezone.now,verbose_name="Eklenme Tarihi")

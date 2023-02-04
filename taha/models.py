@@ -2,11 +2,14 @@ from django.db import models
 from django.utils import timezone
 
 class KitaplikModel(models.Model):
-    isim = models.CharField(max_length=200)
+    class Meta:
+        verbose_name="Kitap"
+        verbose_name_plural="Kitaplar"
+    isim = models.CharField(verbose_name="Kitap İsmi",max_length=200)
     yazar = models.CharField(max_length=200)
     yayin_tarihi = models.DateField()
-    tur = models.CharField(max_length=200)
-    aciklama = models.TextField()
+    tur = models.CharField(verbose_name="Kitap Turu",max_length=200)
+    aciklama = models.TextField(verbose_name="Kitap ozeti")
     kayit_tarihi = models.DateTimeField(default=timezone.now)
     yayin_durumu = models.BooleanField(default=False)
     
