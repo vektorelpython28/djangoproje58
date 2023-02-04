@@ -1,15 +1,17 @@
 from django.db import models
+from django.utils import timezone
 
-class OrnekData(models.Model):
-    class Meta:
-        verbose_name_plural = "Örnek DATALAR"
+class BlogModel(models.Model):
+    baslik = models.CharField(max_length=200)
+    yazi = models.TextField()
+    kayitzaman = models.DateTimeField(default=timezone.now)
+    yayimzaman = models.DateTimeField(null=True,blank=True)
 
-    adi = models.CharField(verbose_name="ADI",max_length=50)
-    soyadi = models.CharField(max_length=50)
-    email = models.EmailField(max_length=254)
-    adres = models.TextField(null=True,blank=True)
-    kayitzaman=models.DateTimeField(null=True)
+    def yayimla(self):
+        self.yayimzaman = timezone.now()
+        self.save()
     
-
     def __str__(self):
-        return self.adi + " " + self.soyadi
+        return self.baslik
+
+    

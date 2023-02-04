@@ -37,13 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ediz',
     'Emre',
     'iclal',
     'sancakli',
     'nur',
     'Bora',
     'mürüvet',
+    'ediz',
+    'busra',
+    'taha',
     
 ]
 
