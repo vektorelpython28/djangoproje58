@@ -6,7 +6,9 @@ class MakaleModel(models.Model):
     makale_yazi = models.TextField()
     makale_ozet = models.TextField()
     makale_kayitzaman = models.DateTimeField(default=timezone.now)
+    makale_yayimzaman = models.DateTimeField()
     
-    
+    def yayimzamani(self):
+        self.makale_yayimzaman = timezone.now()
     def __str__(self):
         return self.baslik
