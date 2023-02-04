@@ -9,7 +9,7 @@ class EsporModel(models.Model):
     giristarih = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.baslik
+        return self.isim
 
 
 

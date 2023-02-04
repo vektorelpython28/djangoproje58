@@ -13,4 +13,4 @@ class HaberModel(models.Model):
         self.save()
     
     def __str__(self):
-        return self.baslik
+        return self.haberbaslik

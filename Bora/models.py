@@ -13,4 +13,4 @@ class MakaleModel(models.Model):
         
 
     def __str__(self):
-        return self.baslik
+        return self.makale_baslik
