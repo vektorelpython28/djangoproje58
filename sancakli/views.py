@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.shortcuts import render
+from .models import HaberModel
+
+def listele(request):
+    haberler =  HaberModel.objects.all()
+    return render(request,"sancakli/listele.html",{"haberler":haberler})

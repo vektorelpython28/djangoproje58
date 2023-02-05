@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title> Ana Sayfa</title>
+</head>
+<body>
+{% for data in yapılacaklar %}
+
+<h1>{{data.baslik}}</h1>
+<p>{{data.aciklama}}</p>
+{{data.eklenme_tarihi}}
+{{data.durum}}
+{% endfor %}
+
+</body>
+</html>

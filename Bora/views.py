@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import MakaleModel
 
-# Create your views here.
+def listele(request):
+    makaleler =  MakaleModel.objects.all()
+    return render(request,"Bora/listele.html",{"Makaleler":makaleler})

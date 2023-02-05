@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title> Ana Sayfa</title>
+</head>
+<body>
+{% for data in haberler %}
+
+<h1>{{data.haberbaslik}}</h1>
+<h2>{{data.haberozet}}</h2>
+<p>{{data.habericerik}}</p>
+{{data.haberkayitzaman}}
+{% endfor %}
+
+</body>
+</html>

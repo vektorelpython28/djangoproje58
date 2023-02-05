@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title> Ana Sayfa</title>
+</head>
+<body>
+{% for data in gonderiler %}
+
+<h1>{{data.baslik}}</h1>
+<p>{{data.yazi}}</p>
+{{data.kayitzaman}}
+{% endfor %}
+
+</body>
+</html>
