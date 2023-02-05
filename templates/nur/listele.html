@@ -1,15 +1,18 @@
-<html>
-<head>
-    <title> Ana Sayfa</title>
-</head>
-<body>
-{% for data in yapilacaklar %}
+{% extends '../base.html' %}
 
-<h1>{{data.baslik}}</h1>
-<p>{{data.aciklama}}</p>
-{{data.eklenme_tarihi}}
-{{data.durum}}
-{% endfor %}
-<br><a href={% url 'anasayfa' %}>Ana Sayfa</a>
-</body>
-</html>
+{% block baslik %}
+    <a href="index.html" class="logo"><strong>Nurun</strong> Web Sitesi</a>
+{% endblock baslik %}
+
+
+{% block icerik%}
+
+    {% for data in Yapilacaklar %}
+
+        <h1>{{data.baslik}}</h1>
+        <p>{{data.aciklama}}</p>
+        {{data.eklenme_tarihi}}
+        {{data.durum}}
+    {% endfor %}
+
+{% endblock icerik%}

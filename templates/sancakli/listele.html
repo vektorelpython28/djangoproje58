@@ -1,16 +1,15 @@
-<html>
-<head>
-    <title> Ana Sayfa</title>
-</head>
-<body>
+{% extends '../base.html' %}
 
-{% for data in haberler %}
+{% block baslik %}
+    <a href="index.html" class="logo"><strong>Sancaklinin</strong> Web Sitesi</a>
+{% endblock baslik %}
 
-<h1>{{data.haberbaslik}}</h1>
-<h2>{{data.haberozet}}</h2>
-<p>{{data.habericerik}}</p>
-{{data.haberkayitzaman}}
-{% endfor %}
-<br><a href={% url 'anasayfa' %}>Ana Sayfa</a>
-</body>
-</html>
+
+{% block icerik %}
+    {% for data in haberler %}
+        <h1>{{data.haberbaslik}}</h1>
+        <h2>{{data.haberozet}}</h2>
+        <p>{{data.habericerik}}
+        <br>{{data.haberkayitzaman}}</p>
+    {% endfor %}
+{% endblock icerik %}

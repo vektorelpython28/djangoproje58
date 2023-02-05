@@ -1,16 +1,18 @@
-<html>
-<head>
-    <title> Ana Sayfa</title>
-</head>
-<body>
-{% for data in Oyuncular %}
+{% extends '../base.html' %}
 
-<h1>{{data.isim}}</h1>
-<h2>{{data.nickname}}</h2>
-<h3>{{data.mainhero}}</h3>
-<p>{{data.takim}}</p>
-{{data.giristarih}}
-{% endfor %}
-<br><a href={% url 'anasayfa' %}>Ana Sayfa</a>
-</body>
-</html>
+{% block isim %}
+    <a href="index.html" class="logo"><strong>Emre'nin</strong> Web Sitesi</a>
+{% endblock isim %}
+
+{% block nickname%}
+    
+    {% for data in Oyuncular %}
+
+        <h1>{{data.isim}}</h1>
+        <h2>{{data.nickname}}</h2>
+        <h3>{{data.mainhero}}</h3>
+        <p>{{data.takim}}</p>
+        {{data.giristarih}}
+        {% endfor %}
+
+{% endblock nickname%}

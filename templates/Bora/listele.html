@@ -1,15 +1,16 @@
-<html>
-<head>
-    <title> Ana Sayfa</title>
-</head>
-<body>
-{% for data in Makaleler%}
+{% extends '../base.html' %}
 
-<h1>{{data.makale_baslik}}</h1>
-<h2>{{data.makale_konu}}</h2>
-<p>{{data.makale_yazi}}</p>
-{{data.makale_yayimzaman}}
-{% endfor %}
-<br><a href={% url 'anasayfa' %}>Ana Sayfa</a>
-</body>
-</html>
+{% block baslik %}
+    <a href="index.html" class="logo"><strong>Edizin</strong> Web Sitesi</a>
+{% endblock baslik %}
+    
+
+{% block icerik %}
+    {% for data in Makaleler%}
+        <h1>{{data.makale_baslik}}</h1>
+        <h2>{{data.makale_konu}}</h2>
+        <p>{{data.makale_yazi}}</p>
+        {{data.makale_yayimzaman}}
+        <br>
+    {% endfor %}
+{% endblock icerik %}

@@ -12,3 +12,19 @@
 <br><a href={% url 'anasayfa' %}>Ana Sayfa</a>
 </body>
 </html>
+
+
+{% extends '../base.html' %}
+
+{% block baslik %}
+    <a href="index.html" class="logo"><strong>iclalin</strong> Web Sitesi</a>
+{% endblock baslik %}
+
+
+{% block icerik %}
+    {% for data in gonderiler %}
+        <h1>{{data.baslik}}</h1>
+        <p>{{data.yazi}}</p>
+        {{data.kayitzaman}}
+    {% endfor %}
+{% endblock icerik %}
