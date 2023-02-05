@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import ToDoListModel
+from .models import ToDoList
 # Create your views here.
 def listele(request):
-    Yapilacaklar = ToDoListModel.objects.all()
+    Yapilacaklar = ToDoList.objects.all()
     return render(request,"nur/listele.html",{"Yapilacaklar":Yapilacaklar})

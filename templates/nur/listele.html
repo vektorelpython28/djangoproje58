@@ -3,13 +3,13 @@
     <title> Ana Sayfa</title>
 </head>
 <body>
-{% for data in yapılacaklar %}
+{% for data in yapilacaklar %}
 
 <h1>{{data.baslik}}</h1>
 <p>{{data.aciklama}}</p>
 {{data.eklenme_tarihi}}
 {{data.durum}}
 {% endfor %}
-
+<br><a href={% url 'anasayfa' %}>Ana Sayfa</a>
 </body>
 </html>

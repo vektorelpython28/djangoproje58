@@ -3,12 +3,13 @@
     <title> Ana Sayfa</title>
 </head>
 <body>
-{% for data in gonderiler %}
+{% for data in Makaleler%}
 
-<h1>{{data.baslik}}</h1>
-<p>{{data.yazi}}</p>
-{{data.kayitzaman}}
+<h1>{{data.makale_baslik}}</h1>
+<h2>{{data.makale_konu}}</h2>
+<p>{{data.makale_yazi}}</p>
+{{data.makale_yayimzaman}}
 {% endfor %}
-
+<br><a href={% url 'anasayfa' %}>Ana Sayfa</a>
 </body>
 </html>

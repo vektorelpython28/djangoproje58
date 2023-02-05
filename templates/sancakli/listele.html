@@ -3,6 +3,7 @@
     <title> Ana Sayfa</title>
 </head>
 <body>
+
 {% for data in haberler %}
 
 <h1>{{data.haberbaslik}}</h1>
@@ -10,6 +11,6 @@
 <p>{{data.habericerik}}</p>
 {{data.haberkayitzaman}}
 {% endfor %}
-
+<br><a href={% url 'anasayfa' %}>Ana Sayfa</a>
 </body>
 </html>
