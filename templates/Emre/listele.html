@@ -1,10 +1,10 @@
 {% extends '../base.html' %}
 
-{% block isim %}
+{% block baslik %}
     <a href="index.html" class="logo"><strong>Emre'nin</strong> Web Sitesi</a>
-{% endblock isim %}
+{% endblock baslik %}
 
-{% block nickname%}
+{% block icerik%}
     
     {% for data in Oyuncular %}
 
@@ -15,4 +15,4 @@
         {{data.giristarih}}
         {% endfor %}
 
-{% endblock nickname%}
+{% endblock icerik%}
